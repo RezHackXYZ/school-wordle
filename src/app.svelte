@@ -18,6 +18,7 @@
 		display: flex;
 		flex-direction: column;
 		margin: 0;
+		font-family: "Sour Gummy", sans-serif;
 	}
 
 	h1 {
