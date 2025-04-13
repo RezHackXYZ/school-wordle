@@ -1,6 +1,8 @@
 <script>
     import Keyboard from "./keyboard.svelte";
     import Display from "./display.svelte";
+
+    
 </script>
 
 <div id="root">

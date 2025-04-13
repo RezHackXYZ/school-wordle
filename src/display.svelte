@@ -1,65 +1,5 @@
 <script>
-	// c = correct position
-	// d = different position
-	// w = wrong and not in word
-	let words = [
-		[
-			["R", "c"],
-			["A", "d"],
-			["D", "w"],
-			["I", "w"],
-			["O", "w"],
-		],
-		[
-			["T", "w"],
-			["E", "w"],
-			["S", "w"],
-			["T", "w"],
-			["S", "w"],
-		],
-		[
-			["P", "w"],
-			["L", "w"],
-			["A", "d"],
-			["N", "w"],
-			["E", "w"],
-		],
-		[
-			["C", "w"],
-			["O", "w"],
-			["D", "w"],
-			["E", "w"],
-			["S", "w"],
-		],
-		[
-			["H", "w"],
-			["E", "w"],
-			["L", "w"],
-			["L", "w"],
-			["O", "w"],
-		],
-		[
-			["G", "w"],
-			["A", "d"],
-			["M", "w"],
-			["E", "w"],
-			["S", "w"],
-		],
-		[
-			["F", "w"],
-			["A", "c"],
-			["C", "w"],
-			["T", "w"],
-			["S", "w"],
-		],
-		[
-			["R", "c"],
-			["A", "c"],
-			["D", "c"],
-			["I", "c"],
-			["O", "c"],
-		],
-	];
+	import { CurrentWord, words } from "./logic.js";
 </script>
 
 <div id="root">
@@ -70,6 +10,13 @@
 			{/each}
 		</div>
 	{/each}
+	<div class="word">
+			<span>{CurrentWord[0]}</span>
+			<span>{CurrentWord[1]}</span>
+			<span>{CurrentWord[2]}</span>
+			<span>{CurrentWord[3]}</span>
+			<span>{CurrentWord[4]}</span>
+	</div>
 </div>
 
 <style>
@@ -96,6 +43,7 @@
 		align-items: center;
 		border-radius: 10px;
 		font-size: 50px;
+		border: 2px solid #444;
 	}
 
 	.c {

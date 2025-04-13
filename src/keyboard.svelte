@@ -1,61 +1,30 @@
 <script>
-	// c = correct position
-	// d = different position
-	// w = wrong and not in word
-
-	/*
-    
-    Q W E R T Y U I O P [ ] \
-A S D F G H J K L ; '
-Z X C V B N M , . /
-
-*/
-	let words = [
-		[
-			["Q", "n"],
-			["W", "n"],
-			["E", "n"],
-			["R", "n"],
-			["T", "n"],
-			["Y", "n"],
-			["U", "n"],
-			["I", "n"],
-			["O", "n"],
-			["P", "n"],
-		],
-		[
-			["A", "n"],
-			["S", "n"],
-			["D", "n"],
-			["F", "n"],
-			["G", "n"],
-			["H", "n"],
-			["J", "n"],
-			["K", "n"],
-			["L", "n"],
-		],
-		[
-			["⇦", "o"],
-			["Z", "n"],
-			["X", "n"],
-			["C", "n"],
-			["V", "n"],
-			["B", "n"],
-			["N", "n"],
-			["M", "n"],
-			["↵", "o"],
-		],
-	];
+	import { keys, ButtonPressed } from "./logic.js";
 </script>
 
 <div id="root">
-	{#each words as word}
-		<div class="word">
-			{#each word as letter}
-				<button class={letter[1]}>{letter[0]}</button>
-			{/each}
-		</div>
-	{/each}
+	<div class="word">
+		{#each keys.slice(0, 10) as key}
+			<button on:click={() => ButtonPressed(key[0])} class={key[1]}
+				>{key[0]}</button
+			>
+		{/each}
+	</div>
+
+	<div class="word">
+		{#each keys.slice(10, 19) as key}
+		<button on:click={() => ButtonPressed(key[0])} class={key[1]}
+			>{key[0]}</button
+			>
+		{/each}
+	</div>
+	<div class="word">
+		{#each keys.slice(19) as key}
+		<button on:click={() => ButtonPressed(key[0])} class={key[1]}
+			>{key[0]}</button
+			>
+		{/each}
+	</div>
 </div>
 
 <style>
